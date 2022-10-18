@@ -9,6 +9,7 @@ import { productsAndCartLoader } from './loaders/productsAndCartLoader';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Shipping from './components/Shipping/Shipping';
+import PrivateRoute from './routes/PrivateRoute';
 
 
 function App() {
@@ -29,11 +30,11 @@ function App() {
         },
         {
           path: 'inventory',
-          element: <Inventory></Inventory>
+          element: <PrivateRoute><Inventory></Inventory></PrivateRoute>
         },
         {
           path: '/shipping',
-          element: <Shipping></Shipping>
+          element: <PrivateRoute><Shipping></Shipping></PrivateRoute>
         },
         {
           path: 'about',
